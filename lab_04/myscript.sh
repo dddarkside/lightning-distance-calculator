@@ -6,6 +6,7 @@ mkfifo sound_data
 while :
 do
 line=$(head -n 1 light_data)
+space=$(head -n 1 light_data)
 if [ $line -ge 13000 ]
 then
   break
