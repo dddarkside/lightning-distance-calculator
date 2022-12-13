@@ -97,10 +97,10 @@ int main(int argc, char *argv[])
 			//fflush(stdout);
 
 			if(&adc0<10000)write(fd, NULL ,1);
-			write(fd, &adc0,sizeof(int));
-            write(fd, "\n",sizeof(char));
-            write(fd, &ttime,sizeof(int));
-            write(fd, "\n",sizeof(char));
+			write(fd, &adc0,5);
+            write(fd, "\n",1);
+            write(fd, &ttime,5);
+            write(fd, "\n",1);
 		} else {
             long ttime = time(NULL);
 			//printf("ADC: %d\n", adc0);
@@ -108,10 +108,10 @@ int main(int argc, char *argv[])
 			//fflush(stdout);
 
             if(&adc0<10000)write(fd, NULL ,1);
-			write(fd, &adc0,sizeof(int));
-            write(fd, "\n",sizeof(char));
-            write(fd, &ttime,sizeof(int));
-            write(fd, "\n",sizeof(char));
+			write(fd, &adc0,5);//может быть как 5 так и 6//возможна ошибка
+            write(fd, "\n",1);
+            write(fd, &ttime,5);
+            write(fd, "\n",1);
 		}
 		usleep(pause_time * 1000);
 	}
